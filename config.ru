@@ -7,7 +7,7 @@ class App < Roda
 
   route do |r|
     r.root do
-      r.redirect url(Time.now.hour)
+      r.redirect url(Time.now.hour) + "?" + env['QUERY_STRING']
     end
   end
 
